@@ -1,0 +1,18 @@
+AllCops:
+  Exclude:
+    - 'webinar_ru.gemspec'
+    - 'spec/spec_helper.rb'
+    - Rakefile
+    - bin/*
+Style/StringLiterals:
+  Enabled: false
+Lint/RaiseException:
+  Enabled: true
+Lint/StructNewOverride:
+  Enabled: true
+Style/HashEachMethods:
+  Enabled: true
+Style/HashTransformValues:
+  Enabled: true
+Style/HashTransformKeys:
+  Enabled: true

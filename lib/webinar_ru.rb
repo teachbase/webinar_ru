@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "webinar_ru/version"
 
 module WebinarRu
