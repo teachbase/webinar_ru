@@ -2,16 +2,30 @@ PATH
   remote: .
   specs:
     webinar_ru (0.1.0)
+      evil-client
 
 GEM
   remote: https://rubygems.org/
   specs:
     ast (2.4.0)
+    concurrent-ruby (1.1.6)
     diff-lcs (1.3)
+    dry-initializer (3.0.3)
+    evil-client (3.0.4)
+      dry-initializer (>= 2.1, < 4)
+      mime-types (~> 3.1)
+      rack (~> 2)
+      tram-policy (>= 0.3.1, < 3)
+    i18n (1.8.2)
+      concurrent-ruby (~> 1.0)
     jaro_winkler (1.5.4)
+    mime-types (3.3.1)
+      mime-types-data (~> 3.2015)
+    mime-types-data (3.2019.1009)
     parallel (1.19.1)
     parser (2.7.1.0)
       ast (~> 2.4.0)
+    rack (2.2.2)
     rainbow (3.0.0)
     rake (12.3.3)
     rexml (3.2.4)
@@ -37,6 +51,9 @@ GEM
       ruby-progressbar (~> 1.7)
       unicode-display_width (>= 1.4.0, < 2.0)
     ruby-progressbar (1.10.1)
+    tram-policy (2.0.1)
+      dry-initializer (> 2, < 4)
+      i18n (~> 1.0)
     unicode-display_width (1.7.0)
 
 PLATFORMS

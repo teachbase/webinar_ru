@@ -1,0 +1,184 @@
+{
+  "id": 2356809,
+  "name": "Вебинар на 100%. Интенсив",
+  "description": "",
+  "status": "ACTIVE",
+  "access": 4,
+  "lang": "RU",
+  "startsAt": "2022-01-01T12:00:00+0300",
+  "utcStartsAt": 1641027600,
+  "createUserId": 1029,
+  "timezoneId": 1,
+  "endsAt": "2022-01-15T12:00:00+0300",
+  "organizationId": 9559,
+  "type": "webinar",
+  "createUser": {
+    "id": 1029,
+    "name": "Специалист",
+    "secondName": "тех.поддержки",
+    "email": "support@webinar.ru"
+  },
+  "rule": "FREQ=DAILY",
+  "additionalFields": [
+    {
+      "key": "62899cefc8855544723baae88cbfce9c",
+      "label": "Отчество",
+      "type": "text",
+      "isRequired": true
+    },
+    {
+      "key": "0f2390833c88051b4d901f260d17c5f8",
+      "label": "Откуда вы о нас узнали?",
+      "type": "radio",
+      "isRequired": true,
+      "values": [
+        "От друзей и знакомых",
+        "От коллег и партнеров по работе",
+        "Из социальных сетей"
+      ]
+    }
+  ],
+  "lectors": [
+    {
+      "name": "Специалист",
+      "secondName": "тех.поддержки",
+      "position": "Техническая поддержка",
+      "avatar": {}
+    }
+  ],
+  "tags": [],
+  "announceFiles": [],
+  "files": [
+    {
+      "id": 15426205,
+      "type": "file",
+      "fileType": "presentation",
+      "createUserId": 1029,
+      "name": "webinar_na_100.pdf",
+      "format": "pdf",
+      "url": "https:\/\/events-storage.webinar.ru\/api-storage\/files\/webinar\/2017\/09\/19\/7Ysoe6zK0CxAhOmFgu538NaGDKixjC7BUdKMnZzLYS9xix4L.pdf"
+    }
+  ],
+  "eventSessions": [
+    {
+      "id": 2399943,
+      "name": "Вебинар на 100%. Интенсив",
+      "description": "",
+      "status": "ACTIVE",
+      "access": 4,
+      "lang": "RU",
+      "startsAt": "2022-01-01T12:00:00+0300",
+      "utcStartsAt": 1641027600,
+      "createUserId": 1029,
+      "timezoneId": 1,
+      "organizationId": 9559,
+      "type": "webinar",
+      "createUser": {
+        "id": 1029,
+        "name": "Специалист",
+        "secondName": "тех.поддержки",
+        "email": "support@webinar.ru"
+      },
+      "additionalFields": [
+        {
+          "key": "62899cefc8855544723baae88cbfce9c",
+          "label": "Отчество",
+          "type": "text",
+          "isRequired": true
+        },
+        {
+          "key": "0f2390833c88051b4d901f260d17c5f8",
+          "label": "Откуда вы о нас узнали?",
+          "type": "radio",
+          "isRequired": true,
+          "values": [
+            "От друзей и знакомых",
+            "От коллег и партнеров по работе",
+            "Из социальных сетей"
+          ]
+        }
+      ],
+      "lectors": [
+        {
+          "name": "Специалист",
+          "secondName": "тех.поддержки",
+          "position": "Техническая поддержка",
+          "avatar": {}
+        }
+      ],
+      "tags": [],
+      "announceFiles": [],
+      "files": [
+        {
+          "id": 15426205,
+          "type": "file",
+          "fileType": "presentation",
+          "createUserId": 1029,
+          "name": "webinar_na_100.pdf",
+          "format": "pdf",
+          "url": "https:\/\/events-storage.webinar.ru\/api-storage\/files\/webinar\/2017\/09\/19\/7Ysoe6zK0CxAhOmFgu538NaGDKixjC7BUdKMnZzLYS9xix4L.pdf"
+        }
+      ]
+    },
+    {
+      "id": 2478935,
+      "name": "Вебинар на 100%. Интенсив",
+      "description": "",
+      "status": "ACTIVE",
+      "access": 4,
+      "lang": "RU",
+      "startsAt": "2022-01-02T12:00:00+0300",
+      "utcStartsAt": 1641114000,
+      "createUserId": 1029,
+      "timezoneId": 1,
+      "organizationId": 9559,
+      "type": "webinar",
+      "createUser": {
+        "id": 1029,
+        "name": "Специалист",
+        "secondName": "тех.поддержки",
+        "email": "support@webinar.ru"
+      },
+      "additionalFields": [
+        {
+          "key": "62899cefc8855544723baae88cbfce9c",
+          "label": "Отчество",
+          "type": "text",
+          "isRequired": true
+        },
+        {
+          "key": "0f2390833c88051b4d901f260d17c5f8",
+          "label": "Откуда вы о нас узнали?",
+          "type": "radio",
+          "isRequired": true,
+          "values": [
+            "От друзей и знакомых",
+            "От коллег и партнеров по работе",
+            "Из социальных сетей"
+          ]
+        }
+      ],
+      "lectors": [
+        {
+          "name": "Специалист",
+          "secondName": "тех.поддержки",
+          "position": "Техническая поддержка",
+          "avatar": {}
+        }
+      ],
+      "tags": [],
+      "announceFiles": [],
+      "files": [
+        {
+          "id": 15426205,
+          "type": "file",
+          "fileType": "presentation",
+          "createUserId": 1029,
+          "name": "webinar_na_100.pdf",
+          "format": "pdf",
+          "url": "https:\/\/events-storage.webinar.ru\/api-storage\/files\/webinar\/2017\/09\/19\/7Ysoe6zK0CxAhOmFgu538NaGDKixjC7BUdKMnZzLYS9xix4L.pdf"
+        }
+      ]
+    }
+  ]
+}

@@ -1,5 +1,8 @@
 require "bundler/setup"
 require "webinar_ru"
+require 'test_connection'
+require 'shared_examples'
+require 'shared_context'
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure

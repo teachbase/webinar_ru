@@ -1,0 +1,21 @@
+[
+  {
+    "id": 60387981,
+    "name": "Специалист",
+    "secondName": "тех.поддержки",
+    "email": "support@webinar.ru",
+    "avatar": {},
+    "eventId": 2361791,
+    "eventSessionId": 2405021,
+    "isAccepted": 1,
+    "role": "ADMIN",
+    "isSeen": 1,
+    "agreementStatus": "AGREED",
+    "userId": 1029,
+    "isOnline": "0",
+    "registerStatus": "INVITED",
+    "paymentStatus": "NOT_PAID",
+    "url": "12fcd8413cf8b4b239f732b8481dc68f",
+    "visited": true
+  }
+]

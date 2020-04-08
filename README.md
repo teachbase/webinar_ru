@@ -1,8 +1,5 @@
 # WebinarRu
-
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/webinar_ru`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+This gem wrap webinar.ru API.
 
 ## Installation
 
@@ -22,7 +19,34 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+client = WebinarRu.client(token: "XXXXXXX")
+event_id = client.events.create(
+  name: "Test", access: 1, starts_at: starts_at, duration: duration, description: "Test event!", ends_at: ends_at
+).value.id
+event = client.organization.events(id: event_id).show.value
+session_id = client.events(id: event_id).sessions.create(name: "Webinar", access: 1).value.id
+events = client.organization.events.schedule(from: starts_at - day).value
+client.users(id: user_id).events.schedule(from: starts_at - day).value
+session_id = events.first.sessions.first.id
+client.event_sessions(id: session_id).show.value
+
+client.event_sessions(id: session_id).register(email: "skiline.alex@gmail.com")
+client.event_sessions(id: session_id).invite(users: [email: "79650368741@ya.ru"], send_email: false)
+client.event_sessions(id: session_id).participants
+# NOTE! https://help.webinar.ru/ru/articles/3181373-записи-пояснения-к-разделу
+client.event_sessions(id: session_id).conversions.create(quality: 720)
+client.records.conversions(conversion_id: conversion_id).status
+client.records.index(from: starts_at, to: ends_at)
+
+client.event_sessions(id: session_id).destroy # Danger! it deletes event too
+client.organization.events(id: event_id).destroy # => 404
+```
+
+## Debug
+```ruby
+WebinarRu.logger = Logger.new("tmp/test.log")
+```
 
 ## Development
 

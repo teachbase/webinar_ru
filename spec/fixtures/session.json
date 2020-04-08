@@ -1,0 +1,180 @@
+{
+  "id": 2020193,
+  "name": "Новое мероприятие сегодня",
+  "status": "STOP",
+  "access": 1,
+  "lang": "RU",
+  "startsAt": "2019-07-29T17:59:41+0300",
+  "utcStartsAt": 1564412381,
+  "createUserId": 1029,
+  "timezoneId": 1,
+  "endsAt": "2019-07-30T12:26:23+0300",
+  "organizationId": 9559,
+  "type": "webinar",
+  "createUser": {
+    "id": 1029,
+    "name": "Специалист",
+    "secondName": "тех.поддержки",
+    "email": "support@webinar.ru"
+  },
+  "lectors": [
+    {
+      "name": "Специалист",
+      "secondName": "тех. поддержки",
+      "position": "Техническая поддержка",
+      "avatar": {
+        "url": "https:\/\/events-storage.webinar.ru\/api-storage\/files\/webinar\/2017\/10\/17\/1pHvTIHii5odmgGZlNtgTVl01729BfKHXSIfrnR5P3tDxv7g.png",
+        "thumbnails": {
+          "640x1920": "https:\/\/events-storage.webinar.ru\/api-storage\/640x1920\/files\/webinar\/2017\/10\/17\/1pHvTIHii5odmgGZlNtgTVl01729BfKHXSIfrnR5P3tDxv7g.png?s=1508241587",
+          "1920x1080": "https:\/\/events-storage.webinar.ru\/api-storage\/1920x1080\/files\/webinar\/2017\/10\/17\/1pHvTIHii5odmgGZlNtgTVl01729BfKHXSIfrnR5P3tDxv7g.png?s=1508241587",
+          "1333x1000": "https:\/\/events-storage.webinar.ru\/api-storage\/1333x1000\/files\/webinar\/2017\/10\/17\/1pHvTIHii5odmgGZlNtgTVl01729BfKHXSIfrnR5P3tDxv7g.png?s=1508241587",
+          "224x199": "https:\/\/events-storage.webinar.ru\/api-storage\/224x199\/files\/webinar\/2017\/10\/17\/1pHvTIHii5odmgGZlNtgTVl01729BfKHXSIfrnR5P3tDxv7g.png?s=1508241587",
+          "200x50": "https:\/\/events-storage.webinar.ru\/api-storage\/200x50\/files\/webinar\/2017\/10\/17\/1pHvTIHii5odmgGZlNtgTVl01729BfKHXSIfrnR5P3tDxv7g.png?s=1508241587",
+          "50x50": "https:\/\/events-storage.webinar.ru\/api-storage\/50x50\/files\/webinar\/2017\/10\/17\/1pHvTIHii5odmgGZlNtgTVl01729BfKHXSIfrnR5P3tDxv7g.png?s=1508241587",
+          "34x34": "https:\/\/events-storage.webinar.ru\/api-storage\/34x34\/files\/webinar\/2017\/10\/17\/1pHvTIHii5odmgGZlNtgTVl01729BfKHXSIfrnR5P3tDxv7g.png?s=1508241587",
+          "148x112": "https:\/\/events-storage.webinar.ru\/api-storage\/148x112\/files\/webinar\/2017\/10\/17\/1pHvTIHii5odmgGZlNtgTVl01729BfKHXSIfrnR5P3tDxv7g.png?s=1508241587"
+        }
+      }
+    }
+  ],
+  "tags": [],
+  "announceFiles": [],
+  "files": [
+    {
+      "id": 7624655,
+      "parentId": 3062879,
+      "type": "file",
+      "fileType": "test",
+      "createUserId": 1029,
+      "name": "вкепу",
+      "questions": [
+        {
+          "questionData": "345345",
+          "allowCustonAnswer": false,
+          "maxPointsAnswers": 1,
+          "answers": [
+            {
+              "answerData": "йцуйцу",
+              "isCorrect": false,
+              "points": 0
+            },
+            {
+              "answerData": "12312",
+              "isCorrect": false,
+              "points": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 62445803,
+      "type": "file",
+      "fileType": "testResult",
+      "createUserId": 1029,
+      "organizationId": 9559,
+      "name": "вкепу"
+    },
+    {
+      "id": 43909741,
+      "parentId": 2158793,
+      "type": "file",
+      "fileType": "test",
+      "createUserId": 1029,
+      "organizationId": 9559,
+      "name": "Вылетаем из приложения",
+      "questions": [
+        {
+          "questionData": "Вылетим?",
+          "allowCustonAnswer": false,
+          "answers": [
+            {
+              "answerData": "да",
+              "isCorrect": true,
+              "points": 0
+            },
+            {
+              "answerData": "нет",
+              "isCorrect": false,
+              "points": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 54703643,
+      "parentId": 2158793,
+      "type": "file",
+      "fileType": "test",
+      "createUserId": 1029,
+      "organizationId": 9559,
+      "name": "Название голосования",
+      "questions": [
+        {
+          "questionData": "Мой вопрос",
+          "allowCustonAnswer": true,
+          "answers": [
+            {
+              "answerData": "первый вариант ответа",
+              "isCorrect": false,
+              "points": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 62476889,
+      "parentId": 2158793,
+      "type": "file",
+      "fileType": "test",
+      "createUserId": 1029,
+      "organizationId": 9559,
+      "name": "Опрос",
+      "questions": [
+        {
+          "questionData": "Как Вам наш вебинар?",
+          "allowCustonAnswer": true,
+          "answers": [
+            {
+              "answerData": "Супер",
+              "isCorrect": false,
+              "points": 0
+            },
+            {
+              "answerData": "Классно",
+              "isCorrect": false,
+              "points": 0
+            },
+            {
+              "answerData": "Божественно",
+              "isCorrect": false,
+              "points": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 62476903,
+      "type": "file",
+      "fileType": "testResult",
+      "createUserId": 1029,
+      "organizationId": 9559,
+      "name": "Опрос"
+    },
+    {
+      "id": 62445783,
+      "parentId": 908493,
+      "type": "file",
+      "fileType": "record",
+      "createUserId": 1029,
+      "name": "Новое мероприятие сегодня",
+      "url": "https:\/\/events.webinar.ru\/images\/event-default.png",
+      "duration": 66401.732400179,
+      "cuts": [],
+      "isViewable": false
+    }
+  ]
+}

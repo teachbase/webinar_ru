@@ -1,0 +1,20 @@
+[
+  {
+    "id": 57325367,
+    "name": "Новое мероприятие сегодня",
+    "link": "https://events.webinar.ru/supportservice/2308067/record-new/2368927",
+    "isViewable": false,
+    "hasPassword": false,
+    "size": 472494,
+    "createAt": "2019-04-30 12:02:14"
+  },
+  {
+    "id": 56883657,
+    "name": "Новый вебинар",
+    "link": "https://events.webinar.ru/supportservice/2315151/record-new/2357691",
+    "isViewable": false,
+    "hasPassword": false,
+    "size": 4073495,
+    "createAt": "2019-04-25 13:22:51"
+  }
+]
