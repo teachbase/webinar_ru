@@ -2,8 +2,7 @@
 
 module WebinarRu
   module Entities
-    # Create Event or Session result
-    # contain `id` and `url`
+    # Create Event or Session result contain `id` and `url`
     class CreateResult
       extend Dry::Initializer
 

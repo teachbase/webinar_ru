@@ -3,15 +3,16 @@
 module WebinarRu
   module Entities
     # Participant entity
-    # option :id [String]
-    # option :name [String]
-    # option :second_name [String]
-    # option :email [String]
-    # option :role [String]
-    # option :register_status [String]
-    # option :payment_status [String]
-    # option :register_date [String]
-    # option :visited [Boolean]
+    #
+    # - option `:id` [String]
+    # - option `:name` [String]
+    # - option `:second_name` [String]
+    # - option `:email` [String]
+    # - option `:role` [String]
+    # - option `:register_status` [String]
+    # - option `:payment_status` [String]
+    # - option `:register_date` [String]
+    # - option `:visited` [Boolean]
     class Participant
       extend Dry::Initializer
 

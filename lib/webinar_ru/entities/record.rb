@@ -1,13 +1,14 @@
 module WebinarRu
   module Entities
     # Record entity
-    # option :id [String]
-    # option :name [String]
-    # option :is_viewable [Boolean]
-    # option :has_password [Boolean]
-    # option :size [Integer]
-    # option :create_at [String]
-    # option :url [String]
+    #
+    # - option `:id` [String]
+    # - option `:name` [String]
+    # - option `:is_viewable` [Boolean]
+    # - option `:has_password` [Boolean]
+    # - option `:size` [Integer]
+    # - option `:create_at` [String]
+    # - option `:url` [String]
     class Record
       extend Dry::Initializer
 

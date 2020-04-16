@@ -3,10 +3,11 @@
 module WebinarRu
   module Entities
     # Registration result, returned by invite and register actions
-    # option :email [String] optional property, returned by only #invite
-    # option :url [String]
-    # option :participant_id [String]
-    # option :contact_id [String]
+    #
+    # - option `:email` [String] optional property, returned by only #invite
+    # - option `:url` [String]
+    # - option `:participant_id` [String]
+    # - option `:contact_id` [String]
     class RegistrationResult
       extend Dry::Initializer
 
