@@ -1,3 +1,5 @@
+![Ruby](https://github.com/teachbase/webinar_ru/workflows/Ruby/badge.svg?branch=master)
+
 # WebinarRu
 This gem wrap webinar.ru API.
 
