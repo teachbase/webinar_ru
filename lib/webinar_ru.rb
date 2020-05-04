@@ -27,6 +27,7 @@ require "webinar_ru/api/v3/organization"
 require "webinar_ru/api/v3/participants"
 require "webinar_ru/api/v3/stats"
 require "webinar_ru/api/v3/records"
+require "webinar_ru/api/connection"
 
 # Main configuration module
 module WebinarRu
@@ -40,6 +41,11 @@ module WebinarRu
   # @return [Evil::Client]
   def client(token:, domain: nil, host: nil, client: Api::V3::Client)
     client.new(domain: domain, host: host, token: token)
+  end
+
+  # Setup connection with timeout
+  def timeout=(val)
+    Api::V3::Client.connection = Api::Connection.new(timeout: val)
   end
 
   # Logger for debug request to webinar.ru
