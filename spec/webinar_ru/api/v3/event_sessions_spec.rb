@@ -34,7 +34,8 @@ RSpec.describe WebinarRu::Api::V3::Client, :test_connection, :params do
           additional_fields: additional_fields,
           starts_at: Time.new(2020, 12, 1, 12, 30).to_i,
           lang: :ru,
-          image: image_id
+          image: image_id,
+          duration: 1800
         }
       end
       let(:expected_request) do
@@ -55,7 +56,8 @@ RSpec.describe WebinarRu::Api::V3::Client, :test_connection, :params do
             "additionalFields[][label]" => "Name",
             "additionalFields[][placeholder]" => "val1",
             "additionalFields[][type]" => "text",
-            "additionalFields[][values][]" => "var 2"
+            "additionalFields[][values][]" => "var 2",
+            "duration" => "PT0H30M0S"
           },
           token: token,
           host: host

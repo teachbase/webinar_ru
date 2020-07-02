@@ -28,9 +28,13 @@ WebinarRu::Api::V3::Client.scope :event_sessions do
     option :image,                optional: true
     option :lang, proc(&:upcase), optional: true
     option :additional_fields,    optional: true
+    option :duration,             optional: true
 
     let(:converted_params) do
-      { starts_at: WebinarRu::Utils.to_webinar_time(starts_at) }.compact
+      {
+        starts_at: WebinarRu::Utils.to_webinar_time(starts_at),
+        duration: WebinarRu::Utils.to_ical_duration(duration)
+      }.compact
     end
 
     body { safe_options.merge(converted_params) }

@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    webinar_ru (0.1.1)
+    webinar_ru (0.1.2)
       evil-client
 
 GEM
