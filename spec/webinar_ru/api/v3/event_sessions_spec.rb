@@ -35,7 +35,8 @@ RSpec.describe WebinarRu::Api::V3::Client, :test_connection, :params do
           starts_at: Time.new(2020, 12, 1, 12, 30).to_i,
           lang: :ru,
           image: image_id,
-          duration: 1800
+          duration: 1800,
+          timezone: "Europe/Moscow"
         }
       end
       let(:expected_request) do

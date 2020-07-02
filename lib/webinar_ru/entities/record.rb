@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module WebinarRu
   module Entities
     # Record entity

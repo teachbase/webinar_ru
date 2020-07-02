@@ -26,7 +26,8 @@ RSpec.describe WebinarRu::Api::V3::Client do
           duration: 30 * 60, # 30 minutes
           owner_id: owner_id,
           default_reminders_enabled: reminders_enabled,
-          image: image_id
+          image: image_id,
+          timezone: "Europe/Moscow"
         }
       end
       let(:expected_request) do
@@ -76,7 +77,8 @@ RSpec.describe WebinarRu::Api::V3::Client do
         let(:params) do
           {
             name: event_name,
-            access: access_type
+            access: access_type,
+            timezone: "Europe/Moscow"
           }
         end
         let(:expected_request) do
@@ -264,7 +266,8 @@ RSpec.describe WebinarRu::Api::V3::Client do
           description: description,
           starts_at: Time.new(2020, 12, 1, 12, 30).to_i,
           lang: :ru,
-          image: image_id
+          image: image_id,
+          timezone: "Europe/Moscow"
         }
       end
       let(:expected_request) do
@@ -295,7 +298,8 @@ RSpec.describe WebinarRu::Api::V3::Client do
         let(:params) do
           {
             name: event_name,
-            access: access_type
+            access: access_type,
+            timezone: "Europe/Moscow"
           }
         end
         let(:expected_request) do

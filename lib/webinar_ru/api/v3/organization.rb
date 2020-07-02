@@ -35,10 +35,11 @@ WebinarRu::Api::V3::Client.scope :organization do
       option :image,                optional: true
       option :duration,             optional: true
       option :owner_id,             optional: true
+      option :timezone
 
       let(:converted_params) do
         {
-          starts_at: WebinarRu::Utils.to_webinar_time(starts_at),
+          starts_at: WebinarRu::Utils.to_webinar_time(starts_at, timezone: timezone),
           duration: WebinarRu::Utils.to_ical_duration(duration)
         }.compact
       end

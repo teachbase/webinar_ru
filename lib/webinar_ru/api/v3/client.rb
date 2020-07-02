@@ -30,7 +30,7 @@ module WebinarRu
         end
 
         let(:safe_options) do
-          options.except(:domain, :token, :host, :id)
+          options.except(:domain, :token, :host, :id, :timezone)
         end
 
         # response_handler parse and wrap data

@@ -26,5 +26,6 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_dependency "evil-client"
+  spec.add_dependency "tzinfo"
   spec.add_development_dependency "rubocop"
 end

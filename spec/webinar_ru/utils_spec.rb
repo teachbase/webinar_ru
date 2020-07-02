@@ -12,7 +12,7 @@ RSpec.describe WebinarRu::Utils do
   end
 
   describe ".to_webinar_time" do
-    subject { described_class.to_webinar_time(time) }
+    subject { described_class.to_webinar_time(time, timezone: "Europe/Moscow") }
 
     let(:time) { Time.new(2020, 12, 1, 12, 30).to_i }
 

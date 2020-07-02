@@ -28,11 +28,12 @@ WebinarRu::Api::V3::Client.scope :events do
     option :default_reminders_enabled, optional: true
     option :is_event_reg_allowed,      optional: true
     option :lang, proc(&:upcase),      optional: true
+    option :timezone
 
     let(:converted_params) do
       {
-        starts_at: WebinarRu::Utils.to_webinar_time(starts_at),
-        ends_at: WebinarRu::Utils.to_webinar_time(ends_at),
+        starts_at: WebinarRu::Utils.to_webinar_time(starts_at, timezone: timezone),
+        ends_at: WebinarRu::Utils.to_webinar_time(ends_at, timezone: timezone),
         duration: WebinarRu::Utils.to_ical_duration(duration)
       }.compact
     end
@@ -129,9 +130,10 @@ WebinarRu::Api::V3::Client.scope :events do
       option :starts_at,            optional: true
       option :image,                optional: true
       option :lang, proc(&:upcase), optional: true
+      option :timezone
 
       let(:converted_params) do
-        { starts_at: WebinarRu::Utils.to_webinar_time(starts_at) }.compact
+        { starts_at: WebinarRu::Utils.to_webinar_time(starts_at, timezone: timezone) }.compact
       end
 
       body { safe_options.merge(converted_params) }

@@ -21,10 +21,10 @@ module WebinarRu
     # @example
     #   to_webinar_time(seconds) #=>
     #   {:date=>{:year=>2020, :month=>12, :day=>1}, :time=>{:hour=>12, :minute=>30}}
-    def to_webinar_time(seconds)
+    def to_webinar_time(seconds, timezone:)
       return unless seconds
 
-      time = Time.at(seconds)
+      time = Time.at(seconds, in: TZInfo::Timezone.get(timezone))
       {
         date: { year: time.year, month: time.month, day: time.day },
         time: { hour: time.hour, minute: time.min }

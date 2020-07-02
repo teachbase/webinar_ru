@@ -23,7 +23,8 @@ module WebinarRu
     # - option `:lang` [String] webinar, meeting
     # - option `:utc_starts_at` [Integer] UNIX time
     # - option `:organization_id` [String]
-    # - option `:announce_files` [Array<Hash>] information about files added to the event announcement
+    # - option `:announce_files` [Array<Hash>] information about files added to the event
+    #   announcement
     # - option `:additional_fields` [Array<Hash>] information about additional registration fields
     # - option `:files` [Array<Hash>] information about files added to the event.
     class SessionDetail < WebinarBase

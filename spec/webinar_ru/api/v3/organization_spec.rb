@@ -40,7 +40,8 @@ RSpec.describe WebinarRu::Api::V3::Client, :test_connection, :params do
             image: image_id,
             url_alias: url_alias,
             duration: 30 * 60, # 30 minutes
-            owner_id: owner_id
+            owner_id: owner_id,
+            timezone: "Europe/Moscow"
           }
         end
         let(:expected_request) do

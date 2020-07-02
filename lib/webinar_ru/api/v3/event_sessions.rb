@@ -29,10 +29,11 @@ WebinarRu::Api::V3::Client.scope :event_sessions do
     option :lang, proc(&:upcase), optional: true
     option :additional_fields,    optional: true
     option :duration,             optional: true
+    option :timezone
 
     let(:converted_params) do
       {
-        starts_at: WebinarRu::Utils.to_webinar_time(starts_at),
+        starts_at: WebinarRu::Utils.to_webinar_time(starts_at, timezone: timezone),
         duration: WebinarRu::Utils.to_ical_duration(duration)
       }.compact
     end

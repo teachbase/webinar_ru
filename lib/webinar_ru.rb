@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'evil-client'
+require 'tzinfo'
 require "webinar_ru/version"
 require 'webinar_ru/utils'
 require "webinar_ru/result"
