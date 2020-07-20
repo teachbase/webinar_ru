@@ -136,8 +136,8 @@ WebinarRu::Api::V3::Client.scope :event_sessions do
       http_method :post
       path { "#{id}/records/conversions" }
 
-      option :quality
-      option :view
+      option :quality, optional: true
+      option :view,    optional: true
 
       body { safe_options }
       let(:response_handler) do
