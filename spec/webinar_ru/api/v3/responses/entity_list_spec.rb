@@ -9,7 +9,8 @@ RSpec.describe WebinarRu::Api::V3::Responses::EntityList, :response do
       id: data.first["id"],
       name: data.first["name"],
       estimated_at: data.first["estimatedAt"],
-      class: WebinarRu::Entities::Event
+      class: WebinarRu::Entities::Event,
+      status: "stop"
     )
     expect(subject.value.first.sessions.first).to have_attributes(
       id: data.first["eventSessions"].first["id"],

@@ -7,7 +7,7 @@ module WebinarRu
       extend Dry::Initializer
 
       option :id, proc(&:to_s)
-      option :status, optional: true
+      option :status, proc { |val| val.to_s.downcase }, optional: true
       option :access, proc(&:to_i), optional: true
       option :name, optional: true
       option :description, optional: true

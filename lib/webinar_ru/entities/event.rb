@@ -7,7 +7,7 @@ module WebinarRu
     # has options:
     #
     # - option `:id` [String]
-    # - option `:status` [String] ACTIVE, STOP, START
+    # - option `:status` [String] active, stop, start
     # - option `:access` [Integer]
     #     - 1  free access;
     #     - 3  free access with a password;
