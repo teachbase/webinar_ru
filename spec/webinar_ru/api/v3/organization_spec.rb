@@ -36,7 +36,7 @@ RSpec.describe WebinarRu::Api::V3::Client, :test_connection, :params do
             password: password,
             description: description,
             lang: :ru,
-            starts_at: Time.new(2020, 12, 1, 12, 30).to_i,
+            starts_at: Time.utc(2020, 12, 1, 9, 30).to_i,
             image: image_id,
             url_alias: url_alias,
             duration: 30 * 60, # 30 minutes

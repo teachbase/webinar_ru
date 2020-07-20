@@ -14,7 +14,7 @@ RSpec.describe WebinarRu::Utils do
   describe ".to_webinar_time" do
     subject { described_class.to_webinar_time(time, timezone: "Europe/Moscow") }
 
-    let(:time) { Time.new(2020, 12, 1, 12, 30).to_i }
+    let(:time) { Time.utc(2020, 12, 1, 9, 30).to_i }
 
     it "converts to ical format string" do
       expect(subject).to eq(

@@ -32,7 +32,7 @@ RSpec.describe WebinarRu::Api::V3::Client, :test_connection, :params do
           access: access_type,
           description: description,
           additional_fields: additional_fields,
-          starts_at: Time.new(2020, 12, 1, 12, 30).to_i,
+          starts_at: Time.utc(2020, 12, 1, 9, 30).to_i,
           lang: :ru,
           image: image_id,
           duration: 1800,
