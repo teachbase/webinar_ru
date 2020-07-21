@@ -34,29 +34,25 @@ require "webinar_ru/api/connection"
 
 # Main configuration module
 module WebinarRu
-  module_function
+  class << self
+    attr_accessor :logger
 
-  # Returns configured client for webinar.ru API
-  # @param token [String] you personal secret token
-  # @param [String] domain
-  # @param [String] host
-  # @param [Class<Evil::Client>] client
-  # @return [Evil::Client]
-  def client(token:, domain: nil, host: nil, client: Api::V3::Client)
-    client.new(domain: domain, host: host, token: token)
+    # Returns configured client for webinar.ru API
+    # @param token [String] you personal secret token
+    # @param [String] domain
+    # @param [String] host
+    # @param [Class<Evil::Client>] client
+    # @return [Evil::Client]
+    def client(token:, domain: nil, host: nil, client: Api::V3::Client)
+      client.new(domain: domain, host: host, token: token)
+    end
+
+    # Setup connection timeout
+    def timeout=(val)
+      Api::V3::Client.connection.timeout = val
+    end
   end
 
-  # Setup connection with timeout
-  def timeout=(val)
-    Api::V3::Client.connection = Api::Connection.new(timeout: val)
-  end
-
-  # Logger for debug request to webinar.ru
-  def logger
-    @logger
-  end
-
-  def logger=(logger)
-    @logger = logger
-  end
+  Api::V3::Client.connection = Api::Connection.new
+  self.timeout = 60
 end

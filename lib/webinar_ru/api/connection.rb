@@ -11,6 +11,8 @@ module WebinarRu
       # @param  [Hash<String, Object>] env Rack environment
       # @return [Array] Rack-compatible response
       #
+      attr_accessor :timeout
+
       def call(env)
         request = Rack::Request.new(env)
         with_logger_for request do
@@ -22,10 +24,6 @@ module WebinarRu
       end
 
       private
-
-      def initialize(timeout: 60)
-        @timeout = timeout
-      end
 
       def open_http_connection_for(req)
         Net::HTTP.start req.host, req.port, use_ssl: req.ssl?,
