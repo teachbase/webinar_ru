@@ -3,13 +3,18 @@ PATH
   specs:
     webinar_ru (0.1.3)
       evil-client
+      rate_throttle_client
       tzinfo
 
 GEM
   remote: https://rubygems.org/
   specs:
+    addressable (2.7.0)
+      public_suffix (>= 2.0.2, < 5.0)
     ast (2.4.0)
     concurrent-ruby (1.1.6)
+    crack (0.4.3)
+      safe_yaml (~> 1.0.0)
     diff-lcs (1.3)
     dry-initializer (3.0.3)
     evil-client (3.0.4)
@@ -17,7 +22,8 @@ GEM
       mime-types (~> 3.1)
       rack (~> 2)
       tram-policy (>= 0.3.1, < 3)
-    i18n (1.8.3)
+    hashdiff (1.0.0)
+    i18n (1.8.4)
       concurrent-ruby (~> 1.0)
     jaro_winkler (1.5.4)
     mime-types (3.3.1)
@@ -26,9 +32,11 @@ GEM
     parallel (1.19.1)
     parser (2.7.1.0)
       ast (~> 2.4.0)
+    public_suffix (4.0.2)
     rack (2.2.3)
     rainbow (3.0.0)
     rake (12.3.3)
+    rate_throttle_client (0.1.2)
     rexml (3.2.4)
     rspec (3.9.0)
       rspec-core (~> 3.9.0)
@@ -52,13 +60,17 @@ GEM
       ruby-progressbar (~> 1.7)
       unicode-display_width (>= 1.4.0, < 2.0)
     ruby-progressbar (1.10.1)
-    thread_safe (0.3.6)
+    safe_yaml (1.0.5)
     tram-policy (2.0.1)
       dry-initializer (> 2, < 4)
       i18n (~> 1.0)
-    tzinfo (1.2.7)
-      thread_safe (~> 0.1)
+    tzinfo (2.0.2)
+      concurrent-ruby (~> 1.0)
     unicode-display_width (1.7.0)
+    webmock (3.7.6)
+      addressable (>= 2.3.6)
+      crack (>= 0.3.2)
+      hashdiff (>= 0.4.0, < 2.0.0)
 
 PLATFORMS
   ruby
@@ -68,6 +80,7 @@ DEPENDENCIES
   rspec (~> 3.0)
   rubocop
   webinar_ru!
+  webmock
 
 BUNDLED WITH
    2.1.4

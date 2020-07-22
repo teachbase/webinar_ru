@@ -27,5 +27,7 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency "evil-client"
   spec.add_dependency "tzinfo"
+  spec.add_dependency "rate_throttle_client"
   spec.add_development_dependency "rubocop"
+  spec.add_development_dependency "webmock"
 end

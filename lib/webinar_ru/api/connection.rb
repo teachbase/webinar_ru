@@ -1,29 +1,57 @@
 # frozen_string_literal: true
 
+require 'rate_throttle_client'
+
 module WebinarRu
   module Api
     # Connection for client
     # The keys used in options are
     # * :+timeout+: timeout in seconds
     class Connection
+      # Decorator for RateThrottleClient
+      class ResponseDecorator < SimpleDelegator
+        alias object __getobj__
+
+        def status
+          object.code.to_i
+        end
+
+        def header
+          Hash(object.header)
+        end
+
+        def body
+          Array(object.body)
+        end
+      end
+      attr_accessor :timeout
+
+      def initialize(throttle: nil, timeout: 60)
+        @throttle = throttle || RateThrottleClient::ExponentialIncreaseProportionalDecrease.new
+        @timeout = timeout
+      end
+
       # Makes the request by taking rack env and returning rack response
       #
       # @param  [Hash<String, Object>] env Rack environment
       # @return [Array] Rack-compatible response
-      #
-      attr_accessor :timeout
-
       def call(env)
         request = Rack::Request.new(env)
-        with_logger_for request do
-          open_http_connection_for request do |http|
-            res = http.request build_from(request)
-            [res.code.to_i, Hash(res.header), Array(res.body)]
-          end
-        end
+        res = @throttle.call { send_request(request) }
+        [res.status, res.header, res.body]
       end
 
       private
+
+      def send_request(request)
+        with_logger_for request do
+          open_http_connection_for request do |http|
+            ResponseDecorator.new(
+              http.request(build_from(request))
+            )
+          end
+        end
+      end
 
       def open_http_connection_for(req)
         Net::HTTP.start req.host, req.port, use_ssl: req.ssl?,

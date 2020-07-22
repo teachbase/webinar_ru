@@ -3,6 +3,7 @@ require "webinar_ru"
 require 'test_connection'
 require 'shared_examples'
 require 'shared_context'
+require 'webmock/rspec'
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
