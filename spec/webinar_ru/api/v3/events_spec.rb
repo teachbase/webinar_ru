@@ -264,6 +264,7 @@ RSpec.describe WebinarRu::Api::V3::Client do
           name: event_name,
           access: access_type,
           description: description,
+          start_type: start_type,
           starts_at: Time.utc(2020, 12, 1, 9, 30).to_i,
           lang: :ru,
           image: image_id,
@@ -276,6 +277,7 @@ RSpec.describe WebinarRu::Api::V3::Client do
           request_method: "POST",
           body: {
             'name' => event_name,
+            'startType' => start_type,
             'access' => access_type.to_s,
             'description' => description,
             "startsAt[date][day]" => "1",
