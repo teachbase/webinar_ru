@@ -32,6 +32,7 @@ RSpec.describe WebinarRu::Api::V3::Client, :test_connection, :params do
           access: access_type,
           description: description,
           additional_fields: additional_fields,
+          start_type: start_type,
           starts_at: Time.utc(2020, 12, 1, 9, 30).to_i,
           lang: :ru,
           image: image_id,
@@ -45,6 +46,7 @@ RSpec.describe WebinarRu::Api::V3::Client, :test_connection, :params do
           request_method: "PUT",
           body: {
             'name' => event_name,
+            'startType' => start_type,
             'access' => access_type.to_s,
             'description' => description,
             'lang' => lang,

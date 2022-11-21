@@ -127,6 +127,7 @@ WebinarRu::Api::V3::Client.scope :events do
       option :access, proc(&:to_i)
 
       option :description,          optional: true
+      option :start_type,           optional: true
       option :starts_at,            optional: true
       option :image,                optional: true
       option :lang, proc(&:upcase), optional: true

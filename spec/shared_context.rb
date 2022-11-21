@@ -10,6 +10,7 @@ RSpec.shared_context "with params", params: true do
   end
   let(:rule) { "FREQ=DAILY" }
   let(:is_event_reg_allowed) { true }
+  let(:start_type) { "autostart" }
   let(:start_at) do
     {
       "date" => { "year" => 2020, "month" => 12, "day" => 1 },
