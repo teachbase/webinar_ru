@@ -25,10 +25,12 @@ module WebinarRu
         end
       end
       attr_accessor :timeout
+      attr_reader :proxy
 
-      def initialize(throttle: nil, timeout: 60)
+      def initialize(throttle: nil, timeout: 60, proxy: nil)
         @throttle = throttle || RateThrottleClient::ExponentialIncreaseProportionalDecrease.new
         @timeout = timeout
+        @proxy = proxy
       end
 
       # Makes the request by taking rack env and returning rack response
@@ -53,12 +55,12 @@ module WebinarRu
         end
       end
 
-      def open_http_connection_for(req)
-        Net::HTTP.start req.host, req.port, use_ssl: req.ssl?,
-                                            open_timeout: @timeout,
-                                            read_timeout: @timeout do |http|
-          yield(http)
-        end
+      def open_http_connection_for(req, &block)
+        net_http = Net::HTTP.new(req.host, req.port, proxy)
+        net_http.use_ssl = req.ssl?
+        net_http.open_timeout = @timeout
+        net_http.read_timeout = @timeout
+        net_http.start(&block)
       end
 
       def build_from(request)

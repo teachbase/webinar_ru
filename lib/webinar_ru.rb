@@ -45,7 +45,9 @@ module WebinarRu
     # @param [String] proxy
     # @return [Evil::Client]
     def client(token:, domain: nil, host: nil, client: Api::V3::Client, proxy: nil)
-      client.new(domain: domain, host: host, token: token, proxy: proxy)
+      Api::V3::Client.connection = Api::Connection.new(proxy: proxy) if proxy
+
+      client.new(domain: domain, host: host, token: token)
     end
 
     # Setup connection timeout

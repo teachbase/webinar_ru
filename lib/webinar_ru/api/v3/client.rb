@@ -16,10 +16,9 @@ module WebinarRu
 
         option :domain, optional: true
         option :host, optional: true
-        option :proxy, optional: true
         option :token
 
-        path { proxy || "https://#{domain || DOMAIN}.#{host || HOST}/v#{VERSION}" }
+        path     { "https://#{domain || DOMAIN}.#{host || HOST}/v#{VERSION}" }
         security { key_auth 'x-auth-token', token }
 
         response 200, 201, 204 do |_status, _headers, (body, _)|
@@ -31,7 +30,7 @@ module WebinarRu
         end
 
         let(:safe_options) do
-          options.except(:domain, :proxy, :token, :host, :id, :timezone)
+          options.except(:domain, :token, :host, :id, :timezone)
         end
 
         # response_handler parse and wrap data

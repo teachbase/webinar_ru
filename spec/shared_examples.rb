@@ -43,15 +43,6 @@ RSpec.shared_examples "sends request with body" do
     expect(connection.host).to eq "#{expected_request[:host]}.webinar.ru"
     expect(connection.content_type).to eq "application/x-www-form-urlencoded"
   end
-
-  context "with proxy" do
-    let(:proxy) { "http://proxy.com" }
-
-    it "sends request from proxy host" do
-      subject
-      expect(connection.host).to eq URI(proxy).host
-    end
-  end
 end
 
 RSpec.shared_examples "sends request with query" do
