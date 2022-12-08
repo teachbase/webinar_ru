@@ -39,8 +39,9 @@ RSpec.shared_context "test_connection", test_connection: true do
   let(:status) { 200 }
   let(:connection) { TestConnection.new(status, response) }
   let(:host) { "test" }
+  let(:proxy) { nil }
   let(:token) { "test-token" }
-  let(:client) { described_class.new(domain: host, token: token, host: nil) }
+  let(:client) { described_class.new(domain: host, token: token, host: nil, proxy: proxy) }
   let(:response) { Hash[].to_json }
 
   before do
