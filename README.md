@@ -43,6 +43,9 @@ client.records.index(from: starts_at, to: ends_at)
 
 client.event_sessions(id: session_id).destroy # Danger! it deletes event too
 client.organization.events(id: event_id).destroy # => 404
+
+# If you want connection through proxy, pass proxy option to client
+WebinarRu.client(token: "XXXXXXX", proxy: "https://proxy.com")
 ```
 
 ## Debug
