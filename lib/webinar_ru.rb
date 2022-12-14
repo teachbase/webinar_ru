@@ -42,8 +42,10 @@ module WebinarRu
     # @param [String] domain
     # @param [String] host
     # @param [Class<Evil::Client>] client
+    # @param [String] proxy
     # @return [Evil::Client]
-    def client(token:, domain: nil, host: nil, client: Api::V3::Client)
+    def client(token:, domain: nil, host: nil, client: Api::V3::Client, proxy: nil)
+      client.connection = Api::Connection.new(proxy: proxy) if proxy
       client.new(domain: domain, host: host, token: token)
     end
 
