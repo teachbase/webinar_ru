@@ -56,11 +56,18 @@ module WebinarRu
       end
 
       def open_http_connection_for(req, &block)
-        net_http = Net::HTTP.new(req.host, req.port, proxy)
+        net_http = Net::HTTP.new(req.host, req.port, *proxy_params)
         net_http.use_ssl = req.ssl?
         net_http.open_timeout = @timeout
         net_http.read_timeout = @timeout
         net_http.start(&block)
+      end
+
+      def proxy_params
+        return [] if proxy.nil?
+
+        uri = URI(proxy)
+        ["#{uri.scheme}://#{uri.host}", uri.port]
       end
 
       def build_from(request)

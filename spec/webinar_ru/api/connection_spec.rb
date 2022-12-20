@@ -41,13 +41,28 @@ RSpec.describe WebinarRu::Api::Connection do
     end
 
     context "with proxy" do
-      let(:proxy) { "https://teachbase.com" }
+      before { WebMock.allow_net_connect! }
       let(:conn) { described_class.new(proxy: proxy) }
 
-      it "connects to proxy first" do
-        WebMock.allow_net_connect!
-        expect { call_connection }.to raise_error(SocketError, /open TCP connection to #{proxy}:80/)
+      context "when proxy address with port" do
+        let(:proxy) { "https://teachbase.com:8888" }
+
+        it "connects to proxy first" do
+          expect { call_connection }.to raise_error(SocketError,
+                                                    %r{ open TCP connection to #{proxy} })
+        end
       end
+
+      context "when proxy as host" do
+        let(:proxy) { "https://teachbase.com" }
+
+        it "connects to proxy first" do
+          expect { call_connection }.to raise_error(SocketError,
+                                                    /open TCP connection to #{proxy}:443/)
+        end
+      end
+
+      after { WebMock.disable_net_connect! }
     end
   end
 end
