@@ -67,7 +67,7 @@ module WebinarRu
         return [] if proxy.nil?
 
         uri = URI(proxy)
-        ["#{uri.scheme}://#{uri.host}", uri.port]
+        [uri.host, uri.port]
       end
 
       def build_from(request)
