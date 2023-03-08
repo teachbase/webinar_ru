@@ -93,8 +93,14 @@ module WebinarRu
 
         logger.info(self) { "sending request:" }
         logger.info(self) { " Url     | #{request.url}" }
-        logger.info(self) { " Headers | #{request.env['HTTP_Variables']}" }
-        logger.info(self) { " Body    | #{request.body}" }
+
+        headers = request.env['HTTP_Variables'].dup
+        headers.delete("x-auth-token")
+        logger.info(self) { " Headers | #{headers}" }
+
+        body = request.body.dup
+        body.delete("password") if body.respond_to?(:delete)
+        logger.info(self) { " Body    | #{body}" }
       end
 
       def log_response(logger, response)
