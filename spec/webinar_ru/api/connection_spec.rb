@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require "logger"
+
 RSpec.describe WebinarRu::Api::Connection do
   describe "#call" do
     subject(:call_connection) { conn.call(env) }
@@ -47,6 +49,28 @@ RSpec.describe WebinarRu::Api::Connection do
       it "sends request" do
         call_connection
         expect(stub).to have_been_requested
+      end
+    end
+
+    context "with logger" do
+      let(:log_io) { StringIO.new }
+      let(:log) { log_io.string }
+      let(:env) do
+        super().merge(
+          "rack.logger" => Logger.new(log_io),
+          "rack.input" => {
+            "password" => "123",
+            "description" => "test"
+          }
+        )
+      end
+      let(:headers) { log.scan(/Headers.*({.*})/).flatten.first }
+      let(:body) { log.scan(/Body.*({.*})/).flatten.first }
+
+      it "filters logs output" do
+        call_connection
+        expect(headers).not_to match("x-auth-token")
+        expect(body).not_to match("password")
       end
     end
   end
