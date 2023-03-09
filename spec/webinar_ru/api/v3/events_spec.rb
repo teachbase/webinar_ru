@@ -98,7 +98,7 @@ RSpec.describe WebinarRu::Api::V3::Client do
       end
     end
 
-    describe "GET #participants /events/{event_id}/participations" do
+    describe "GET #participants /events/{event_id}/participants" do
       subject { client.events(id: event_id).participants(params) }
 
       let(:response) { File.read("spec/fixtures/participations.json") }
