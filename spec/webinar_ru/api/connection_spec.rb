@@ -53,27 +53,25 @@ RSpec.describe WebinarRu::Api::Connection do
     end
 
     context "with logger" do
-      let(:logfile_path) { "spec/fixtures/logs.log" }
-      let(:logfile_content) { File.read(logfile_path) }
+      let(:log_io) { StringIO.new }
+      let(:log) { log_io.string }
       let(:env) do
         super().merge(
-          "rack.logger" => Logger.new(logfile_path),
+          "rack.logger" => Logger.new(log_io),
           "rack.input" => {
             "password" => "123",
             "description" => "test"
           }
         )
       end
-      let(:headers) { logfile_content.scan(/Headers.*({.*})/).flatten.first }
-      let(:body) { logfile_content.scan(/Body.*({.*})/).flatten.first }
+      let(:headers) { log.scan(/Headers.*({.*})/).flatten.first }
+      let(:body) { log.scan(/Body.*({.*})/).flatten.first }
 
       it "filters logs output" do
         call_connection
         expect(headers).not_to match("x-auth-token")
         expect(body).not_to match("password")
       end
-
-      after { File.delete(logfile_path) }
     end
   end
 end
