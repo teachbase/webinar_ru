@@ -58,10 +58,7 @@ RSpec.describe WebinarRu::Api::Connection do
       let(:env) do
         super().merge(
           "rack.logger" => Logger.new(log_io),
-          "rack.input" => {
-            "password" => "123",
-            "description" => "test"
-          }
+          "rack.input" => "password=123&description=test"
         )
       end
       let(:headers) { log.scan(/Headers.*({.*})/).flatten.first }
