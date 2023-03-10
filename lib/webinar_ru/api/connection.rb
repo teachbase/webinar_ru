@@ -98,9 +98,7 @@ module WebinarRu
         headers.delete("x-auth-token")
         logger.info(self) { " Headers | #{headers}" }
 
-        body = request.body.dup
-        body.delete("password") if body.respond_to?(:delete)
-        logger.info(self) { " Body    | #{body}" }
+        logger.info(self) { " Body    | #{request.body.to_s.gsub(/(password=[^&]+)&/, '')}" }
       end
 
       def log_response(logger, response)
