@@ -98,8 +98,7 @@ module WebinarRu
         headers.delete("x-auth-token")
         logger.info(self) { " Headers | #{headers}" }
 
-        password_regex = /(password=[^&]+)&/
-        logger.info(self) { " Body    | #{request.body.gsub(password_regex, '')}" }
+        logger.info(self) { " Body    | #{request.body.to_s.gsub(/(password=[^&]+)&/, '')}" }
       end
 
       def log_response(logger, response)
