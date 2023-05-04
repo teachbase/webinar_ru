@@ -242,7 +242,7 @@ RSpec.describe WebinarRu::Api::V3::Client do
             "users[][additionalFields][some-field-id]" => "some user value",
             "users[][email]" => "test@email.test",
             "users[][name]" => "User name",
-            "users[][role]" => "LECTURER",
+            "users[][role]" => "ADMIN",
             "users[][secondName]" => "User surname",
             'isAutoEnter' => is_auto_enter.to_s,
             'sendEmail' => send_email.to_s

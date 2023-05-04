@@ -259,15 +259,15 @@ RSpec.describe WebinarRu::Api::V3::Client, :test_connection, :params do
 
       let(:response) { File.read("spec/fixtures/invite.json") }
       let(:users) do
-        [
-          {
+        {
+          0 => {
             email: email,
             name: name,
             second_name: second_name,
             additional_fields: additional_fields,
             role: role
           }
-        ]
+        }
       end
       let(:params) do
         {
@@ -281,11 +281,11 @@ RSpec.describe WebinarRu::Api::V3::Client, :test_connection, :params do
           path: "/v3/eventsessions/#{event_session_id}/invite",
           request_method: "POST",
           body: {
-            "users[][additionalFields][some-field-id]" => additional_fields["some-field-id"],
-            "users[][email]" => "test@email.test",
-            "users[][name]" => "User name",
-            "users[][role]" => "LECTURER",
-            "users[][secondName]" => "User surname",
+            "users[0][additionalFields][some-field-id]" => additional_fields["some-field-id"],
+            "users[0][email]" => "test@email.test",
+            "users[0][name]" => "User name",
+            "users[0][role]" => "ADMIN",
+            "users[0][secondName]" => "User surname",
             'isAutoEnter' => is_auto_enter.to_s,
             'sendEmail' => send_email.to_s
           },

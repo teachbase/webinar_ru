@@ -22,8 +22,11 @@ module WebinarRu
         return unless string
 
         params = URI.decode_www_form(string).map do |key, value|
-          [WebinarRu::Utils.camelize(key), value]
+          camelized_key = WebinarRu::Utils.camelize(key)
+          camelized_key.gsub!(/\[\](\[\d\])/, '\1')
+          [camelized_key, value]
         end
+
         URI.encode_www_form(params)
       end
 

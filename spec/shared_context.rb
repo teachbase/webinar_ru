@@ -57,7 +57,7 @@ RSpec.shared_context "user params", user_params: true do
     { "some-field-id" => "some user value" }
   end
   let(:nickname) { "Poops" }
-  let(:role) { "LECTURER" }
+  let(:role) { "ADMIN" }
   let(:is_auto_enter) { true }
   let(:send_email) { false }
   let(:avatar) { "https://ava.user.test/1.png" }
