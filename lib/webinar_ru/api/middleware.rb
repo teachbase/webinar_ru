@@ -23,8 +23,8 @@ module WebinarRu
 
         params = URI.decode_www_form(string).map do |key, value|
           camelized_key = WebinarRu::Utils.camelize(key)
-          camelized_key.gsub!(/\[\](\[\d\])/, '\1')
-          [camelized_key, value]
+          formatted_key = WebinarRu::Utils.clip_array_brackets(camelized_key)
+          [formatted_key, value]
         end
 
         URI.encode_www_form(params)

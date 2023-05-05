@@ -266,6 +266,10 @@ RSpec.describe WebinarRu::Api::V3::Client, :test_connection, :params do
             second_name: second_name,
             additional_fields: additional_fields,
             role: role
+          },
+          1 => {
+            email: "admin@tb.com",
+            role: "ADMIN"
           }
         }
       end
@@ -284,8 +288,10 @@ RSpec.describe WebinarRu::Api::V3::Client, :test_connection, :params do
             "users[0][additionalFields][some-field-id]" => additional_fields["some-field-id"],
             "users[0][email]" => "test@email.test",
             "users[0][name]" => "User name",
-            "users[0][role]" => "ADMIN",
+            "users[0][role]" => "LECTURER",
             "users[0][secondName]" => "User surname",
+            "users[1][email]" => "admin@tb.com",
+            "users[1][role]" => "ADMIN",
             'isAutoEnter' => is_auto_enter.to_s,
             'sendEmail' => send_email.to_s
           },
