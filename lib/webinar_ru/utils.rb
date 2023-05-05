@@ -57,6 +57,10 @@ module WebinarRu
       end
     end
 
+    def clip_array_brackets(param)
+      param.gsub(/\[\](\[\d\])/, '\1')
+    end
+
     # symbolize all hash keys
     # @param [Hash] hash
     # @return [Hash]
