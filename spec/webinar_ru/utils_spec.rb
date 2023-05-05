@@ -46,6 +46,16 @@ RSpec.describe WebinarRu::Utils do
     end
   end
 
+  describe ".clip_array_brackets" do
+    subject do
+      described_class.clip_array_brackets("users[][0][email]")
+    end
+
+    it "clips empty brackets" do
+      expect(subject).to eq "users[0][email]"
+    end
+  end
+
   describe ".symbolize_keys" do
     subject do
       described_class.symbolize_keys(
