@@ -47,12 +47,20 @@ RSpec.describe WebinarRu::Utils do
   end
 
   describe ".clip_array_brackets" do
-    subject do
-      described_class.clip_array_brackets("users[][0][email]")
-    end
+    subject { described_class.clip_array_brackets(param) }
+
+    let(:param) { "users[][0][email]" }
 
     it "clips empty brackets" do
       expect(subject).to eq "users[0][email]"
+    end
+
+    context "with decimal index" do
+      let(:param) { "users[][21][email]" }
+
+      it "clips empty brackets" do
+        expect(subject).to eq "users[21][email]"
+      end
     end
   end
 
