@@ -14,7 +14,7 @@ module WebinarRu
 
           def process(data)
             Array(data).map do |item|
-              @entity_klass.new(WebinarRu::Utils.symbolize_keys(item))
+              @entity_klass.new(**WebinarRu::Utils.symbolize_keys(item))
             end
           end
         end
