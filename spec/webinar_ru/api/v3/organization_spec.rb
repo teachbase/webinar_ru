@@ -24,7 +24,7 @@ RSpec.describe WebinarRu::Api::V3::Client, :test_connection, :params do
       end
 
       describe "PUT #update. /organization/events/{event_id}" do
-        subject { client.organization.events(id: event_id).update(params) }
+        subject { client.organization.events(id: event_id).update(**params) }
 
         let(:event_status) { 'STOP' }
         let(:status) { 204 }
@@ -74,7 +74,7 @@ RSpec.describe WebinarRu::Api::V3::Client, :test_connection, :params do
       end
 
       describe 'GET #schedule. /organization/events/schedule' do
-        subject { client.organization.events.schedule(params) }
+        subject { client.organization.events.schedule(**params) }
 
         let(:response) { File.read("spec/fixtures/events.json") }
         let(:params) do
@@ -148,7 +148,7 @@ RSpec.describe WebinarRu::Api::V3::Client, :test_connection, :params do
       end
 
       describe "PUT #move. /organization/events/{event_id}/move" do
-        subject { client.organization.events(id: event_id).move(params) }
+        subject { client.organization.events(id: event_id).move(**params) }
 
         let(:status) { 204 }
         let(:user_id) { 'some-user-uniq-id' }

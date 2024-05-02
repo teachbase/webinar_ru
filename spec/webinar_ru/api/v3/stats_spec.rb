@@ -3,7 +3,7 @@
 RSpec.describe WebinarRu::Api::V3::Client, :test_connection do
   describe "stats" do
     describe "GET #events /stats/events" do
-      subject { client.stats.events(params) }
+      subject { client.stats.events(**params) }
 
       let(:expected_request) do
         {
@@ -55,7 +55,7 @@ RSpec.describe WebinarRu::Api::V3::Client, :test_connection do
     end
 
     describe "GET #visits" do
-      subject { client.stats.visits(params) }
+      subject { client.stats.visits(**params) }
 
       let(:expected_request) do
         {
@@ -109,7 +109,7 @@ RSpec.describe WebinarRu::Api::V3::Client, :test_connection do
     end
 
     describe "GET #users" do
-      subject { client.stats.users(params) }
+      subject { client.stats.users(**params) }
 
       let(:expected_request) do
         {

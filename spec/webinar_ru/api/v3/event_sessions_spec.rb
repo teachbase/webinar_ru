@@ -23,7 +23,7 @@ RSpec.describe WebinarRu::Api::V3::Client, :test_connection, :params do
     end
 
     describe "PUT #update /eventsessions/{event_session_id}" do
-      subject { client.event_sessions(id: event_session_id).update(params) }
+      subject { client.event_sessions(id: event_session_id).update(**params) }
 
       let(:status) { 204 }
       let(:params) do
@@ -71,7 +71,7 @@ RSpec.describe WebinarRu::Api::V3::Client, :test_connection, :params do
     end
 
     describe "GET #participants /eventsessions/{event_session_id}/participations" do
-      subject { client.event_sessions(id: event_session_id).participants(params) }
+      subject { client.event_sessions(id: event_session_id).participants(**params) }
 
       let(:response) { File.read("spec/fixtures/participations.json") }
       let(:params) do
@@ -92,7 +92,7 @@ RSpec.describe WebinarRu::Api::V3::Client, :test_connection, :params do
     end
 
     describe "PUT #records /eventsessions/{event_session_id}/records" do
-      subject { client.event_sessions(id: event_session_id).records(params) }
+      subject { client.event_sessions(id: event_session_id).records(**params) }
 
       let(:expected_request) do
         {
@@ -111,7 +111,7 @@ RSpec.describe WebinarRu::Api::V3::Client, :test_connection, :params do
     end
 
     describe "POST #conversions /eventsessions/{event_session_id}/records/conversions" do
-      subject { client.event_sessions(id: event_session_id).conversions.create(params) }
+      subject { client.event_sessions(id: event_session_id).conversions.create(**params) }
 
       let(:response) { File.read("spec/fixtures/convert.json") }
       let(:expected_request) do
@@ -183,7 +183,7 @@ RSpec.describe WebinarRu::Api::V3::Client, :test_connection, :params do
     end
 
     describe "POST #register /eventsessions/{event_session_id}/register", :user_params do
-      subject { client.event_sessions(id: event_session_id).register(params) }
+      subject { client.event_sessions(id: event_session_id).register(**params) }
 
       let(:response) { File.read("spec/fixtures/register.json") }
       let(:params) do
@@ -255,7 +255,7 @@ RSpec.describe WebinarRu::Api::V3::Client, :test_connection, :params do
     end
 
     describe "POST #invite. /eventsessions/{event_session_id}/invite", :user_params do
-      subject { client.event_sessions(id: event_session_id).invite(params) }
+      subject { client.event_sessions(id: event_session_id).invite(**params) }
 
       let(:response) { File.read("spec/fixtures/invite.json") }
       let(:users) do

@@ -3,7 +3,7 @@
 RSpec.describe WebinarRu::Api::V3::Client, :test_connection do
   describe "participants" do
     describe "PUT #update. /participations/update" do
-      subject { client.participants.update(params) }
+      subject { client.participants.update(**params) }
 
       let(:role) { "ADMIN" }
       let(:participants) { %w[some-uniq-id some-uniq-id2] }
@@ -27,7 +27,7 @@ RSpec.describe WebinarRu::Api::V3::Client, :test_connection do
     end
 
     describe "PUT #kick /participations/kick" do
-      subject { client.participants.kick(params) }
+      subject { client.participants.kick(**params) }
 
       let(:role) { "ADMIN" }
       let(:participants) { %w[some-uniq-id some-uniq-id2] }
@@ -50,7 +50,7 @@ RSpec.describe WebinarRu::Api::V3::Client, :test_connection do
     end
 
     describe "PUT #delete" do
-      subject { client.participants.delete(params) }
+      subject { client.participants.delete(**params) }
 
       let(:role) { "ADMIN" }
       let(:participants) { %w[some-uniq-id some-uniq-id2] }

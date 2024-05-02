@@ -34,7 +34,7 @@ module WebinarRu
       option :timezoneName, as: :timezone_name, optional: true
       option :image, optional: true
       option :rule, optional: true
-      option :eventSessions, Array[proc { |v| Session.new(v) }], as: :sessions, default: -> { [] }
+      option :eventSessions, Array[proc { |v| Session.new(**v) }], as: :sessions, default: -> { [] }
     end
   end
 end

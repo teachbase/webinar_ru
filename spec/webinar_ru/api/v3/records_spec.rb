@@ -5,7 +5,7 @@ RSpec.describe WebinarRu::Api::V3::Client, :test_connection do
     let(:record_id) { "record-id" }
 
     describe "GET #index /records" do
-      subject { client.records.index(params) }
+      subject { client.records.index(**params) }
 
       let(:response) { File.read("spec/fixtures/records.json") }
       let(:expected_request) do
@@ -38,7 +38,7 @@ RSpec.describe WebinarRu::Api::V3::Client, :test_connection do
     end
 
     describe "PUT #update /records/{record_id}" do
-      subject { client.records(id: record_id).update(params) }
+      subject { client.records(id: record_id).update(**params) }
 
       let(:expected_request) do
         {
@@ -93,7 +93,7 @@ RSpec.describe WebinarRu::Api::V3::Client, :test_connection do
       let(:conversion_id) { "conversion_id" }
 
       describe "POST #create /records/{record_id}/conversions" do
-        subject { client.records(id: record_id).conversions.create(params) }
+        subject { client.records(id: record_id).conversions.create(**params) }
 
         let(:response) { File.read("spec/fixtures/convert.json") }
         let(:expected_request) do
