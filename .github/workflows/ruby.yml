@@ -7,24 +7,32 @@ on:
     branches: [ master ]
 
 jobs:
-  build:
+  rspec:
     runs-on: ubuntu-latest
-
+    env:
+      BUNDLE_JOBS: 4
+      BUNDLE_RETRY: 3
+      CI: true
+    strategy:
+      fail-fast: false
+      matrix:
+        ruby: ["2.7", "3.1"]
     steps:
-    - uses: actions/checkout@v2
-    - uses: actions/cache@v1.1.2
-      with:
-        path: vendor/bundle
-        key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
-        restore-keys: |
-          ${{ runner.os }}-gems-
-    - name: Set up Ruby 2.7
-      uses: ruby/setup-ruby@v1
-      with:
-        ruby-version: 2.7.6
-    - name: Build and test with Rake
-      run: |
-        gem install bundler
-        bundle config path vendor/bundle
-        bundle install --jobs 4 --retry 3
-        bundle exec rspec
+      - uses: actions/checkout@v2
+      - uses: actions/cache@v1
+        with:
+          path: /home/runner/bundle
+          key: bundle-${{ matrix.ruby }}-${{ hashFiles('**/*.gemspec') }}
+          restore-keys: |
+            bundle-${{ matrix.ruby }}-
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: ${{ matrix.ruby }}
+      - name: Bundle install
+        run: |
+          bundle config path /home/runner/bundle
+          bundle install
+          bundle update
+      - name: Run RSpec
+        run: |
+          bundle exec rspec
