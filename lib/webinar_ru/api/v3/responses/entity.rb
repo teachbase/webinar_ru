@@ -13,7 +13,7 @@ module WebinarRu
           private
 
           def process(data)
-            @entity_klass.new(WebinarRu::Utils.symbolize_keys(data))
+            @entity_klass.new(**WebinarRu::Utils.symbolize_keys(data))
           end
         end
       end

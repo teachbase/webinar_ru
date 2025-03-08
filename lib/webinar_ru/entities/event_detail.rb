@@ -35,7 +35,7 @@ module WebinarRu
       option :announceFiles, optional: true, as: :announce_files, default: -> { [] }
       option :additionalFields, optional: true, as: :additional_fields, default: -> { [] }
       option :files, optional: true, default: -> { [] }
-      option :eventSessions, [proc { |v| Session.new(v) }], as: :sessions, default: -> { [] }
+      option :eventSessions, [proc { |v| Session.new(**v) }], as: :sessions, default: -> { [] }
     end
   end
 end

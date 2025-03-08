@@ -5,7 +5,7 @@ RSpec.describe WebinarRu::Api::V3::Client do
     let(:event_id) { 1233 }
 
     describe "POST #create /events" do
-      subject(:create_event) { client.events.create(params) }
+      subject(:create_event) { client.events.create(**params) }
 
       let(:params) do
         {
@@ -99,7 +99,7 @@ RSpec.describe WebinarRu::Api::V3::Client do
     end
 
     describe "GET #participants /events/{event_id}/participants" do
-      subject { client.events(id: event_id).participants(params) }
+      subject { client.events(id: event_id).participants(**params) }
 
       let(:response) { File.read("spec/fixtures/participations.json") }
       let(:params) do
@@ -120,7 +120,7 @@ RSpec.describe WebinarRu::Api::V3::Client do
     end
 
     describe "#PUT #moderate /events/{event_id}/moderate" do
-      subject { client.events(id: event_id).moderate(params) }
+      subject { client.events(id: event_id).moderate(**params) }
 
       let(:participants) { %w[some-uniq-id] }
       let(:expected_request) do
@@ -143,7 +143,7 @@ RSpec.describe WebinarRu::Api::V3::Client do
     end
 
     describe "#POST #register /events/{event_id}/register", :user_params do
-      subject { client.events(id: event_id).register(params) }
+      subject { client.events(id: event_id).register(**params) }
 
       let(:status) { 201 }
 
@@ -216,7 +216,7 @@ RSpec.describe WebinarRu::Api::V3::Client do
     end
 
     describe "POST #invite /events/{event_id}/invite", :user_params do
-      subject { client.events(id: event_id).invite(params) }
+      subject { client.events(id: event_id).invite(**params) }
 
       let(:users) do
         [
@@ -257,7 +257,7 @@ RSpec.describe WebinarRu::Api::V3::Client do
     end
 
     describe "POST #create /events/{event_id}/sessions" do
-      subject(:create_event) { client.events(id: event_id).sessions.create(params) }
+      subject(:create_event) { client.events(id: event_id).sessions.create(**params) }
 
       let(:params) do
         {

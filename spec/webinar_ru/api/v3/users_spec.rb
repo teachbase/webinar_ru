@@ -3,7 +3,7 @@
 RSpec.describe WebinarRu::Api::V3::Client, :params, :test_connection do
   describe "users" do
     describe 'GET #schedule. /users/{user_id}/events/schedule' do
-      subject { client.users(id: user_id).events.schedule(params) }
+      subject { client.users(id: user_id).events.schedule(**params) }
 
       let(:user_id) { 'uniq-user-id' }
 
